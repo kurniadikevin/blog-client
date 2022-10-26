@@ -5,9 +5,23 @@
     gap: 50px;
 }
 
+@media screen and (max-width: 1000px) {
+    .data-collection{
+    grid-template-columns: repeat(2,1fr);
+    }
+   }
+ 
+
+@media screen and (max-width: 500px) {
+   .data-collection{
+    display: flex;
+    flex-direction: column;
+   }
+  }
+
 .data-container{
     padding: 20px;
-    border: 1px solid red;
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
    
@@ -16,10 +30,25 @@
 .data-title{
     font-size: 18pt;
     padding-bottom: 50px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    transition: 0.5s;
 }
+    .data-title:hover{
+        padding-left: 10px;
+       
+    }
+
 .data-body{
     padding-bottom: 25px;
+   font-weight: 450;
+   font-size: 12pt;
 }
 .data-author{
     padding-bottom: 25px;
+}
+.data-date{
+    font-size: 12pt;
+    font-style: italic;
 }

@@ -17,9 +17,16 @@ export function HomePage() {
         setData( jsonResponse);
     };
 
+    const formatDate= (value)=>{
+      let split = value.split('T')
+      return split[0]
+    }
+
+
     // useEffect once
     useEffect(()=>{
         callRestApi();
+        
     },[])
     
     return (
@@ -30,14 +37,16 @@ export function HomePage() {
                     return (
                         
                         <div className='data-container'>
-                            <Link 
+                            <Link className='data-title'
                              to={{ pathname: `/posts/${item._id}`,  }}
                             >
-                                <div className='data-title'>{item.title}</div>
+                                <div >{item.title}</div>
                             </Link>
                             <div className='data-body'>{item.body}</div>
                             <div className='data-author'>{item.author}</div>
-                            <div className='data-date'>{item.date}</div>
+                            <div className='data-date'>
+                               {formatDate(item.date)}
+                            </div>
                         </div>
                     )
                 })}

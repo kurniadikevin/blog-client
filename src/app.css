@@ -1,13 +1,43 @@
-body{
- padding: 20px;
+:root{
+  --black: rgb(35,35,35)
 }
 
+body{
+ padding: 20px;
+ background-color: 	rgb(255,255,245);
+ color: var(--black);
+}
 
 .dashboard{
   display: flex;
   justify-content: space-between;
-  padding: 20px 50px 50px 50px;
-  font-size: 18pt;
+  padding: 10px 40px 50px 20px;
+  font-size: 16pt;
   border-bottom: 1px solid gray;
-  
+  font-family: "Helvetica", Sans-Serif;
+  font-weight: 600;
+
+}
+
+.blog-name{
+  font-size: 22pt;
+  color: var(--black);
+  text-decoration: none;
+  transition: 0.5s;
+}
+  .blog-name:hover{
+    transform: translateX(-5px);
+  }
+
+.home-link{
+  text-decoration: none;
+  color: var(--black);
+  font-size: 18pt;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.home-link:hover{
+  padding-right: 10px;
+  border-right: 1px solid var(--black);
 }

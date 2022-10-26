@@ -12,6 +12,7 @@ export function PostDetail(props) {
   const { id } = useParams();
 
   const [data,setData]= useState([{title:'loading data'}]);
+  const [comment,setComment] = useState({});
 
   const restEndpoint = `http://localhost:5000/posts/${id}`;
 
@@ -34,11 +35,20 @@ export function PostDetail(props) {
       <Dashboard/>
       {data.map(function(item){
         return (
+        <div>
           <div className='post-container'>
-            <div className='data-title'>{item.title} {id}</div>
-            <div className='data-body'>{item.body}</div>
-            <div className='data-author'>{item.author}</div>
-            <div className='data-date'>{item.date}</div>
+            <div className='post-col1'>
+             <div className='data-title'>{item.title}</div>
+            </div>
+            <div className='post-col2'>
+              <div className='data-body'>{item.body}</div>
+              <div className='data-author'>{item.author}</div>
+              <div className='data-date'>{item.date}</div>
+            </div>
+          </div>
+          <div className='comment-container'>
+            comment
+          </div>
         </div>
         )
       })}

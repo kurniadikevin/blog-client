@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 function Dashboard() {
     return (
       <div className="dashboard">
-        <div className="blog-name">Blackboard Journal</div>
-        <Link  to="/" className="dash-home">
+         <Link  to="/" className="blog-name">
+          <div >Blackboard Journal</div>
+        </Link>
+        <Link  to="/" className='home-link'>
           <div >Home</div>
         </Link>
       </div>
