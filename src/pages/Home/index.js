@@ -2,9 +2,10 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import Dashboard from '../dashboard';
+import './styleHome.css'
 
 export function HomePage() {
-  let posts;
+ 
     const [data,setData]= useState([{title:'loading data'}]);
 
     const restEndpoint = "http://localhost:5000/posts";
@@ -27,11 +28,16 @@ export function HomePage() {
             <div className="data-collection">
                 {data.map(function(item){
                     return (
-                        <div>
-                            <div>{item.title}</div>
-                            <div>{item.body}</div>
-                            <div>{item.author}</div>
-                            <div>{item.date}</div>
+                        
+                        <div className='data-container'>
+                            <Link 
+                             to={{ pathname: `/posts/${item._id}`,  }}
+                            >
+                                <div className='data-title'>{item.title}</div>
+                            </Link>
+                            <div className='data-body'>{item.body}</div>
+                            <div className='data-author'>{item.author}</div>
+                            <div className='data-date'>{item.date}</div>
                         </div>
                     )
                 })}

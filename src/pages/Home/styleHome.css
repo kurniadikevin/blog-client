@@ -1,0 +1,25 @@
+.data-collection{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(5,1fr);
+    gap: 50px;
+}
+
+.data-container{
+    padding: 20px;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.data-title{
+    font-size: 18pt;
+    padding-bottom: 50px;
+}
+.data-body{
+    padding-bottom: 25px;
+}
+.data-author{
+    padding-bottom: 25px;
+}
