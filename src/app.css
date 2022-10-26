@@ -1,0 +1,12 @@
+body{
+ padding: 20px;
+}
+
+
+.dashboard{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px 40px 50px;
+  font-size: 18pt;
+  border-bottom: 1px solid gray;
+}
