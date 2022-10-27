@@ -2,8 +2,9 @@ import logo from '../../logo.svg';
 import './style.css';
 import { Link } from 'react-router-dom';
 import Dashboard from '../dashboard';
-import { useParams,useLocation } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { formatDate} from '../../functions';
 
 
 
@@ -11,8 +12,8 @@ export function PostDetail(props) {
   
   const { id } = useParams();
 
-  const [data,setData]= useState([{title:'loading data'}]);
-  const [comment,setComment] = useState([{title:'loading data'}]);
+  const [data,setData]= useState([{title:'loading data', date : new Date()}]);
+  const [comment,setComment] = useState([{title:'loading data', date : new Date()}]);
 
   //api for post
   const restEndpoint = `http://localhost:5000/posts/${id}`;
@@ -38,6 +39,7 @@ export function PostDetail(props) {
   useEffect(()=>{
       callRestApi();
       callRestApiComment();
+    
   },[])
 
 
@@ -55,7 +57,7 @@ export function PostDetail(props) {
             <div className='post-col2'>
               <div className='data-body'>{item.body}</div>
               <div className='data-author'>{item.author}</div>
-              <div className='data-date'>{item.date}</div>
+              <div className='data-date'> {formatDate(item.date)}</div>
             </div>
           </div>
           <div className='comment-section'>
@@ -72,7 +74,9 @@ export function PostDetail(props) {
                       return <div className='comment-author'>Anonymous</div>
                     }
                   })()}
-                  <div className='comment-date'>{item.date}</div>
+                  <div className='comment-date'>
+                  {formatDate(item.date)}
+                    </div>
                 </div>
               )
             })}

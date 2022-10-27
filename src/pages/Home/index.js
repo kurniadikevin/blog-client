@@ -1,8 +1,8 @@
-
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import Dashboard from '../dashboard';
-import './styleHome.css'
+import './styleHome.css';
+import { formatDate} from '../../functions';
 
 export function HomePage() {
  
@@ -17,17 +17,10 @@ export function HomePage() {
         setData( jsonResponse);
     };
 
-    const formatDate= (value)=>{
-        let valueStr = value.toString()
-      let split = valueStr.split('T');// split error
-      return split[0]
-    }
-
-
     // useEffect once
     useEffect(()=>{
         callRestApi();
-        
+       
     },[])
     
     return (

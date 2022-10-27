@@ -38,7 +38,7 @@ body{
 }
 
 .home-link:hover{
-  padding-right: 10px;
+  padding-right: 20px;
   border-right: 1px solid var(--black);
 }
 
@@ -49,4 +49,7 @@ body{
 #toggle-mode{
   font-size: 12pt;
   
+}
+#mode-icon{
+  font-size: 20pt;
 }
