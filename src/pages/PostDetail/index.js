@@ -12,8 +12,9 @@ export function PostDetail(props) {
   const { id } = useParams();
 
   const [data,setData]= useState([{title:'loading data'}]);
-  const [comment,setComment] = useState({});
+  const [comment,setComment] = useState([{title:'loading data'}]);
 
+  //api for post
   const restEndpoint = `http://localhost:5000/posts/${id}`;
 
   const callRestApi = async () => {
@@ -23,9 +24,20 @@ export function PostDetail(props) {
       setData( jsonResponse);
   };
 
+  //api for comment
+  const restEndpointComment = `http://localhost:5000/posts/${id}/comment`;
+
+  const callRestApiComment = async () => {
+      const responseCom = await fetch(restEndpointComment);
+      const jsonResponseCom = await responseCom.json();
+      console.log(jsonResponseCom);
+      setComment( jsonResponseCom);
+  };
+
   // useEffect once
   useEffect(()=>{
       callRestApi();
+      callRestApiComment();
   },[])
 
 
@@ -46,8 +58,25 @@ export function PostDetail(props) {
               <div className='data-date'>{item.date}</div>
             </div>
           </div>
-          <div className='comment-container'>
-            comment
+          <div className='comment-section'>
+            <div className='comment-head'>Comment </div>
+            <div className='comment-wrapper'>
+            {comment.map(function(item){
+              return (
+                <div className='comment-container'>
+                  <div className='comment-text'>{item.text_comment}</div>
+                 {(()=> {
+                    if (item.author){
+                      return <div className='comment-author'>{item.author}</div>
+                    } else {
+                      return <div className='comment-author'>Anonymous</div>
+                    }
+                  })()}
+                  <div className='comment-date'>{item.date}</div>
+                </div>
+              )
+            })}
+            </div>
           </div>
         </div>
         )

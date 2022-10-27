@@ -18,7 +18,7 @@ export function HomePage() {
     };
 
     const formatDate= (value)=>{
-      let split = value.split('T')
+      let split = value.split('T');// split error
       return split[0]
     }
 
@@ -45,7 +45,7 @@ export function HomePage() {
                             <div className='data-body'>{item.body}</div>
                             <div className='data-author'>{item.author}</div>
                             <div className='data-date'>
-                               {formatDate(item.date)}
+                               {item.date}
                             </div>
                         </div>
                     )
