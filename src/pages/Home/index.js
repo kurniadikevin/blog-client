@@ -6,7 +6,7 @@ import './styleHome.css'
 
 export function HomePage() {
  
-    const [data,setData]= useState([{title:'loading data'}]);
+    const [data,setData]= useState([{title:'loading data', date : new Date()}]);
 
     const restEndpoint = "http://localhost:5000/posts";
 
@@ -18,7 +18,8 @@ export function HomePage() {
     };
 
     const formatDate= (value)=>{
-      let split = value.split('T');// split error
+        let valueStr = value.toString()
+      let split = valueStr.split('T');// split error
       return split[0]
     }
 
@@ -37,7 +38,7 @@ export function HomePage() {
                     return (
                         
                         <div className='data-container'>
-                            <Link className='data-title'
+                            <Link className='data-title' id='link2'
                              to={{ pathname: `/posts/${item._id}`,  }}
                             >
                                 <div >{item.title}</div>
@@ -45,7 +46,7 @@ export function HomePage() {
                             <div className='data-body'>{item.body}</div>
                             <div className='data-author'>{item.author}</div>
                             <div className='data-date'>
-                               {item.date}
+                               {formatDate(item.date)}
                             </div>
                         </div>
                     )

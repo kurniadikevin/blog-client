@@ -50,7 +50,7 @@ export function PostDetail(props) {
         <div>
           <div className='post-container'>
             <div className='post-col1'>
-             <div className='data-title'>{item.title}</div>
+             <div className='data-title' id='link2'>{item.title}</div>
             </div>
             <div className='post-col2'>
               <div className='data-body'>{item.body}</div>

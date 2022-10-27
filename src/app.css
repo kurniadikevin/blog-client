@@ -41,3 +41,12 @@ body{
   padding-right: 10px;
   border-right: 1px solid var(--black);
 }
+
+.dashboard-menu{
+  display: flex;
+  gap: 20px;
+}
+#toggle-mode{
+  font-size: 12pt;
+  
+}
