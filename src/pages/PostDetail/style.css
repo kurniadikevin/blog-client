@@ -64,5 +64,21 @@
   border-bottom: 1px solid grey;
 }
 
+#inputCom{
+  width: 300px;
+  resize: none;
+}
+
+.comment-submit{
+  padding-top: 10px;
+}
+
+#addCommentBtn{
+  background-color: rgb(72, 115, 241);
+  color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  border:none;
+}
 
 

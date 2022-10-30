@@ -5,6 +5,7 @@ import Dashboard from '../dashboard';
 import { useParams} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { formatDate} from '../../functions';
+import CommentForm from './commentForm';
 
 
 
@@ -78,9 +79,12 @@ export function PostDetail(props) {
                   {formatDate(item.date)}
                     </div>
                 </div>
+                
               )
             })}
+            <CommentForm/>
             </div>
+           
           </div>
         </div>
         )

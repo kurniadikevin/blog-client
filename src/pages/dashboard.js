@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
 import {toggleMode} from '../functions';
 
+
 function Dashboard() {
+
+  const body= document.querySelector('body')
+  let bodyBg =body.style.backgroundColor;
+  if(bodyBg=== 'rgb(35, 35, 35)'){
+    toggleMode();
+  }
   
   return (
       <div className="dashboard">
