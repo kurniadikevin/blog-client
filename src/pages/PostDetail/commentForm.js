@@ -10,7 +10,7 @@ function CommentForm(){
 
     return(
     <form className='comment-container' method='POST'
-     action={`http://localhost:5000/posts/${id}/comment/form`}>
+     action={`https://hidden-forest-44892.herokuapp.com/posts/${id}/comment/form`}>
         <div className='comment-text'>
         <textarea  type='text' id='inputCom'
         name='text' placeholder="write new comment"></textarea>

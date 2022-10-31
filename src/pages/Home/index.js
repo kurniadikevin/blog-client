@@ -8,7 +8,7 @@ export function HomePage() {
  
     const [data,setData]= useState([{title:'loading data', date : new Date()}]);
 
-    const restEndpoint = "http://localhost:5000/posts";
+    const restEndpoint = "https://hidden-forest-44892.herokuapp.com/posts";
 
     const callRestApi = async () => {
         const response = await fetch(restEndpoint);
