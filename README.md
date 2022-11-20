@@ -8,7 +8,7 @@
 -Node.js
 
 Client
-[blog-client](https://blackboardjournal-927wbbdjo-kurniadikevin.vercel.app/)
+[blog-client](https://blackboardjournal-927wbbdjo-kurniadikevin.vercel.app/) Deployment
 [blog-client](https://github.com/kurniadikevin/blog-client) Repository
 
 API

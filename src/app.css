@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
 :root{
-  --black: rgb(35,35,35)
+  --black: rgb(35,35,35);
+  --white: 	rgb(255,255,235);
+  --link : rgb(35,35,35);
 }
 
 body{
  padding: 20px;
- background-color: 	rgb(255,255,245);
+ background-color: 	var(--white);
  color: var(--black);
+ font-family: 'Manrope', sans-serif;
+
 }
 
 .dashboard{
@@ -20,10 +27,13 @@ body{
 }
 
 .blog-name{
-  font-size: 22pt;
-  color: var(--black);
+  font-size: 30pt;
+   color: var(--link); 
   text-decoration: none;
   transition: 0.5s;
+  font-weight: 510;
+  font-family: 'Manrope', sans-serif;
+
 }
   .blog-name:hover{
     transform: translateX(-5px);
@@ -31,10 +41,11 @@ body{
 
 .home-link{
   text-decoration: none;
-  color: var(--black);
+  color: var(--link);
   font-size: 18pt;
   cursor: pointer;
   transition: 0.5s;
+  font-family: 'Manrope', sans-serif;
 }
 
 .home-link:hover{
@@ -52,4 +63,11 @@ body{
 }
 #mode-icon{
   font-size: 20pt;
+}
+
+@media screen and (max-width:500px) {
+  .dashboard-menu{
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }

@@ -6,6 +6,7 @@ import { useParams} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { formatDate} from '../../functions';
 import CommentForm from './commentForm';
+import LoaderComponent from '../loader/loader';
 
 
 
@@ -13,8 +14,8 @@ export function PostDetail(props) {
   
   const { id } = useParams();
 
-  const [data,setData]= useState([{title:'loading data', date : new Date()}]);
-  const [comment,setComment] = useState([{title:'loading data', date : new Date()}]);
+  const [data,setData]= useState([{title:'loading data...', date : new Date()}]);
+  const [comment,setComment] = useState([{title:'loading data...', date : new Date()}]);
 
   //api for post
   const restEndpoint = `https://hidden-forest-44892.herokuapp.com/posts/${id}`;
@@ -34,6 +35,8 @@ export function PostDetail(props) {
       const jsonResponseCom = await responseCom.json();
       console.log(jsonResponseCom);
       setComment( jsonResponseCom);
+      const loader= document.querySelector('#loader');
+        loader.style.display='none';
   };
 
   // useEffect once
@@ -48,6 +51,7 @@ export function PostDetail(props) {
   return (
     <div className="post-detail">
       <Dashboard/>
+      <LoaderComponent id='loader-post'/>
       {data.map(function(item){
         return (
         <div>

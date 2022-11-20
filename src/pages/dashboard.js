@@ -2,13 +2,9 @@ import { Link } from 'react-router-dom';
 import {toggleMode} from '../functions';
 
 
+
 function Dashboard() {
 
-  const body= document.querySelector('body')
-  let bodyBg =body.style.backgroundColor;
-  if(bodyBg=== 'rgb(35, 35, 35)'){
-    toggleMode();
-  }
   
   return (
       <div className="dashboard">
@@ -19,7 +15,7 @@ function Dashboard() {
           <Link  to="/" className='home-link' id='link2'>
             <div >Home</div>
           </Link>
-          <div id='toggle-mode' onClick={toggleMode} value='day'>
+          <div id='toggle-mode' onClick={()=>{toggleMode() }} value='day'>
             <span class="material-symbols-outlined" id='mode-icon'>
               dark_mode
             </span>
