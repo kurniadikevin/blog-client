@@ -9,7 +9,7 @@ export function HomePage() {
  
     const [data,setData]= useState([{title:'', date : new Date()}]);
 
-    const restEndpoint = "https://hidden-forest-44892.herokuapp.com/posts";
+    const restEndpoint = "https://blog-api-production-8114.up.railway.app/posts";
 
     const callRestApi = async () => {
         const response = await fetch(restEndpoint);
