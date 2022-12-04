@@ -24,7 +24,7 @@ To run the repository locally we are using npm with command
 
 **Blog-Client**
 
-[blog-client](https://blackboardjournal-927wbbdjo-kurniadikevin.vercel.app/) Deployment
+[blog-client](https://blackboardjournal.vercel.app) Deployment
 
 [blog-client](https://github.com/kurniadikevin/blog-client) Repository
 
