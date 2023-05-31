@@ -1,17 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
 
 :root{
-  --black: rgb(35,35,35);
-  --white: 	rgb(255,255,235);
-  --link : rgb(35,35,35);
+  --text: var(--black);
+  --background: var(--white);
+  --black : rgb(35,35,35);
+  --white : rgb(256,256,256);
 }
+
 
 body{
  padding: 20px;
  background-color: 	var(--white);
  color: var(--black);
- font-family: 'Manrope', sans-serif;
 
 }
 
@@ -23,18 +22,15 @@ body{
   border-bottom: 1px solid gray;
   font-family: "Helvetica", Sans-Serif;
   font-weight: 600;
-
 }
 
 .blog-name{
-  font-size: 30pt;
-   color: var(--link); 
+  font-size: 22pt;
+  color: var(--text); 
   text-decoration: none;
   transition: 0.5s;
-  font-weight: 510;
-  font-family: 'Manrope', sans-serif;
-
 }
+
   .blog-name:hover{
     transform: translateX(-5px);
   }

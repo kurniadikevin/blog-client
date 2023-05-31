@@ -1,12 +1,10 @@
+import { Link } from "react-router-dom";
 
 export const formatDate= (value)=>{
-  let arrMonths=[null,'January','February', 'March','April', 'May', 'June','July','August','September','October','November','December'];
-        let valueStr = value.toString()
-      let split = valueStr.split('T');// split error
-      let splitYMD= split[0].split('-');
-      let displayDate = `${splitYMD[2]} ${arrMonths[splitYMD[1]]} ${splitYMD[0]}`
-      return displayDate;
-    }
+  let valueStr = value.toString()
+  let split = valueStr.split('T');// split error
+  return split[0]
+  }
 
 export const toggleMode= ()=>{
         const black = 'var(--black)';
@@ -46,3 +44,29 @@ export const toggleMode= ()=>{
         }
       }
     
+export const getImageSrc = data => {
+  return `http://localhost:5000/${data[0]}`
+};
+
+export const limitDisplayText=(data, limit)=>{
+  if(data){
+  const word=data.split(' ');
+  let shortenText;
+  if (word.length >= limit){
+    shortenText = word.splice(0,limit);
+    return shortenText.join(' ') 
+  } else{
+    return data;
+  }}
+}
+
+export const renderSeeMore=(text,id)=>{
+  if(text && text.split(' ').length >= 30){
+      return(
+          <Link  id='link-seemore'
+          to={{ pathname: `/posts/${id}`,  }}
+          >
+          <a> See More..</a>
+          </Link>
+      )}
+}

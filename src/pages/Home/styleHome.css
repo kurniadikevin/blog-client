@@ -1,7 +1,7 @@
 .data-collection{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(5,1fr);
+    grid-template-rows: repeat(auto-fill);
     gap: 50px;
 }
 
@@ -24,16 +24,27 @@
     padding-top: 30px;
     display: flex;
     flex-direction: column;
-    
+    padding-bottom: 60px;
+}
+
+
+#data-image{
+    width: 100%;
 }
 
 .data-title{
     font-size: 18pt;
     padding-bottom: 50px;
     text-decoration: none;
-    color: var(--link); 
-    font-weight: 590;
+    color: var(--text);
+    font-weight: 600;
     transition: 0.5s;
+    padding-top: 20px;
+}
+
+#data-title-text{
+    border-bottom: 1px solid var(--text);
+    padding-bottom: 20px;
 }
     .data-title:hover{
         padding-left: 10px;
@@ -44,22 +55,46 @@
     padding-bottom: 25px;
    font-weight: 450;
    font-size: 12pt;
-   
+   white-space: pre-line;   
 }
-#index-data-body{
-    height: 190px;
-    overflow: hidden;
-    margin-bottom: 25px;
-    text-overflow: ellipsis;
+
+#link-seemore{
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--text)
 }
 
 .data-author{
     padding-bottom: 25px;
-    font-weight: 600;
+    font-weight: 700;
 }
 .data-date{
     font-size: 12pt;
-    font-weight: 500;
     font-style: italic;
-    font-size: 11pt;
+    font-weight: 800;
+    padding-bottom: 10px;
 }
+
+.btn-container{
+    padding-top: 30px;
+    font-size: 12pt;
+    display: flex;
+    gap: 20px;
+}
+
+.updateBtn, #deleteBtn{
+    cursor: pointer;
+   transition: 0.5s;
+   font-weight: 700;
+   text-decoration: none;
+   display: none;
+   color: var(--text);
+}
+
+.updateBtn:hover, #deleteBtn:hover{
+    
+    border-left: 1px solid black;
+    padding-left: 10px;
+}
+
+    

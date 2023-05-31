@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Dashboard from '../dashboard';
 import { useParams} from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { formatDate} from '../../functions';
+import { formatDate, getImageSrc} from '../../functions';
 import CommentForm from './commentForm';
 import LoaderComponent from '../loader/loader';
 
@@ -57,12 +57,19 @@ export function PostDetail(props) {
         <div>
           <div className='post-container'>
             <div className='post-col1'>
+            {
+                item.imageContent?.length > 0 ?
+              <img id='post-image-detail' alt='post-image' src={getImageSrc(item.imageContent)}
+              width={550} >
+              </img>
+              : ''
+              }
              <div className='data-title' id='link2'>{item.title}</div>
             </div>
             <div className='post-col2'>
               <div className='data-body'>{item.body}</div>
               <div className='data-author'>{item.author}</div>
-              <div className='data-date'> {formatDate(item.date)}</div>
+              <div className='data-date'>{formatDate(item.date)}</div>
             </div>
           </div>
           <div className='comment-section'>
