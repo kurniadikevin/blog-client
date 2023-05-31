@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import {toggleMode} from '../functions';
+import {toggleLightDarkMode, getValueLightDarkMode} from '../functions';
 
 
 
@@ -15,7 +15,7 @@ function Dashboard() {
           <Link  to="/" className='home-link' id='link2'>
             <div >Home</div>
           </Link>
-          <div id='toggle-mode' onClick={()=>{toggleMode() }} value='day'>
+          <div id='toggle-mode'  onClick={toggleLightDarkMode} value={getValueLightDarkMode}>
             <span class="material-symbols-outlined" id='mode-icon'>
               dark_mode
             </span>

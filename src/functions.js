@@ -6,43 +6,42 @@ export const formatDate= (value)=>{
   return split[0]
   }
 
-export const toggleMode= ()=>{
-        const black = 'var(--black)';
-        const white = '	var(--white)';
-      
-        const iconMode = document.querySelector('#mode-icon');
-        const toggleBtn = document.querySelector('#toggle-mode');
 
+  export const toggleLightDarkMode=()=>{
+    const root = document.querySelector(':root');
+    const iconMode = document.querySelector('#mode-icon');
+    const toggleBtn = document.querySelector('#toggle-mode');
+  
+    const styles = getComputedStyle(document.documentElement);
+    const white = styles.getPropertyValue('--white');
+    const black = styles.getPropertyValue('--black');
     
-        if (toggleBtn.value === 'day'){
-          const body = document.querySelector('body');
-          body.style.backgroundColor=white;
-          body.style.color=black;
-          const blogName = document.querySelector('#link');
-          blogName.style.color=black;
-          const blogTitle = document.querySelectorAll('#link2');
-          for(let i=0; i< blogTitle.length; i++){
-            blogTitle[i].style.color=black;
-          }
-          document.documentElement.style.setProperty('--link','rgb(35,35,35)');
-          toggleBtn.value = 'night'
-          iconMode.textContent='dark_mode'
-          
-      } else{
-          const body = document.querySelector('body');
-          body.style.backgroundColor=black;
-          body.style.color=white;
-          const blogName = document.querySelector('#link');
-          blogName.style.color=white;
-          const blogTitle = document.querySelectorAll('#link2');
-          for(let i=0; i< blogTitle.length; i++){
-            blogTitle[i].style.color=white;
-          }
-          document.documentElement.style.setProperty('--link','rgb(255,255,235)');
-          toggleBtn.value = 'day';
-          iconMode.textContent='clear_day';
-        }
-      }
+    if (toggleBtn.value === 'day'){
+    //dark mode
+    root.style.setProperty('--background', black);
+    root.style.setProperty('--text', white);
+    toggleBtn.value = 'night'
+    iconMode.textContent='dark_mode'
+    } else{
+      //light mode
+      root.style.setProperty('--background', white);
+      root.style.setProperty('--text', black);
+      toggleBtn.value = 'day';
+      iconMode.textContent='light_mode';
+    }
+  }
+  
+  export const getValueLightDarkMode=()=>{
+  const styles = getComputedStyle(document.documentElement);
+  const bgColor = styles.getPropertyValue('--background');
+  const white = styles.getPropertyValue('--white');
+  const black = styles.getPropertyValue('--black');
+   if(bgColor === white){
+    return 'day'
+   } else if(bgColor === black){
+    return 'night'
+   }
+  }
     
 export const getImageSrc = data => {
   return `http://localhost:5000/${data[0]}`
