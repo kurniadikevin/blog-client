@@ -44,7 +44,7 @@ export const formatDate= (value)=>{
   }
     
 export const getImageSrc = data => {
-  return `http://localhost:5000/${data[0]}`
+  return `https://blog-api-production-8114.up.railway.app/${data[0]}`
 };
 
 export const limitDisplayText=(data, limit)=>{
