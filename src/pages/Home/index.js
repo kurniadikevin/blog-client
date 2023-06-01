@@ -9,7 +9,7 @@ export function HomePage() {
  
     const [data,setData]= useState([{title:'', date : new Date()}]);
 
-    const restEndpoint = "http://localhost:5000/posts";
+    const restEndpoint = "https://blog-api-production-8114.up.railway.app";
 
     
     const callRestApi = async () => {
