@@ -44,7 +44,7 @@ export const formatDate= (value)=>{
   }
     
 export const getImageSrc = data => {
-  return `https://blog-api-production-8114.up.railway.app/${data[0]}`
+  return `${process.env.REACT_APP_API_URL}/${data[0]}`
 };
 
 export const limitDisplayText=(data, limit)=>{

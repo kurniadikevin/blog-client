@@ -10,7 +10,7 @@ function CommentForm(){
 
     return(
     <form className='comment-container' method='POST'
-     action={`https://blog-api-production-8114.up.railway.app/posts/${id}/comment/form`}>
+     action={`${process.env.REACT_APP_API_URL}/posts/${id}/comment/form`}>
         <div className='comment-text'>
         <textarea  type='text' id='inputCom'
         name='text' placeholder="write new comment"></textarea>

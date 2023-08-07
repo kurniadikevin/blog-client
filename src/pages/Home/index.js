@@ -5,11 +5,12 @@ import './styleHome.css';
 import { formatDate, getImageSrc, limitDisplayText,renderSeeMore} from '../../functions';
 import LoaderComponent from '../loader/loader';
 
+
 export function HomePage() {
  
     const [data,setData]= useState([{title:'', date : new Date()}]);
 
-    const restEndpoint = "https://blog-api-production-8114.up.railway.app/posts";
+    const restEndpoint = `${process.env.REACT_APP_API_URL}/posts`;
 
     
     const callRestApi = async () => {
@@ -24,7 +25,7 @@ export function HomePage() {
     // useEffect once
     useEffect(()=>{
         callRestApi();
-       
+       console.log(process.env.REACT_APP_API_URL)
     },[])
     
     return (
